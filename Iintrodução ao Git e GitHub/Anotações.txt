@@ -1,1 +1,45 @@
 Levando um baile mas eu não vou desistir!!
+
+
+
+# Comandos Git Bash utilizados
+
+## git clone
+
+para 'importar' o repositório do git hub
+
+*precisa completar com o endereço html que o git hub fornece
+
+
+
+## cd 
+
+para abrir o diretório
+
+*precisa completar com o nome do diretório
+
+
+
+## git status
+
+para receber feedback do gitbash se todas as alterações feitas dentro do diretório estão atualizadas no controle de versão interno do computador
+
+
+
+## git add .
+
+para que o controle de versão interno do computador atualize
+
+
+
+## git commit -m
+
+para 'comitar' a versão - ou seja, para preparar a atualização a versão do computador interno com a versão registrada em nuvem do github
+
+* precisa incluir texto explicativo entre aspas para ficar registrada a explicação da alteração feita. Por exemplo: "Inclusão de pasta da trilha de Empreendedorismo e Soft Skills, com o resumo da formação de Business Agility"
+
+
+
+## git push origin main
+
+para empurrar a atualização para a nuvem
