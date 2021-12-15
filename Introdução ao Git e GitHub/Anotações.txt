@@ -45,3 +45,57 @@ para 'comitar' a versão - ou seja, para preparar a atualização a versão do c
 ## git push origin main
 
 para empurrar a atualização para a nuvem
+
+
+
+# git log
+
+para apresentar as mudanças - autor, data, mensagem
+
+
+
+# git log --decorate
+
+para apresentar ainda mais informações
+
+
+
+# git log --author ="Nome de alguém"
+
+para filtrar as mudanças realizadas pelo autor indicado no código
+
+
+
+# git short log
+
+mostra resumidamente a contribuição de cada autor
+
+
+
+# git shortlog -sn
+
+mostra a quantidade de comits de cada author
+
+
+
+# git log --graph
+
+mostra de forma gráfica o que está acontecendo internamente
+
+
+
+# git show
+
+declara qual foi a alteração feita depois de comitar
+
+
+
+# git diff
+
+declara qual foi a alteração feita antes de comitar
+
+
+
+# git diff --name-only
+
+declara qual o nome arquivo foi modificado
