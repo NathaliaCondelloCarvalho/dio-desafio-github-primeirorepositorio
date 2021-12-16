@@ -1,5 +1,15 @@
 Levando um baile mas eu não vou desistir!!
 
+# Três áreas lógicas do Git
+
+- Head: aponta para o último grupo de alterações (snapshot) comitado
+- Index ou área de stage: aponta para o próximo grupo de alterações a ser comitado - é a informação que já passou pelo comando add .
+- Diretório de Working: são as informações que ainda não foram adicionadas a área de stage
+
+## Sequência de passos:
+
+DIRETÓRIO DE WORKING >> comando git add. >> INDEX >> commit -m "mensagem" >> Head
+
 
 
 # Comandos Git Bash utilizados
@@ -34,7 +44,7 @@ para que o controle de versão interno do computador atualize
 
 
 
-## git commit -m
+## git commit -m "mensagem"
 
 para 'comitar' a versão - ou seja, para preparar a atualização a versão do computador interno com a versão registrada em nuvem do github
 
@@ -42,60 +52,105 @@ para 'comitar' a versão - ou seja, para preparar a atualização a versão do c
 
 
 
+## git commit -am "mensagem"
+
+para 'comitar' todos os arquivos modificados e acrescentar uma mensagem
+
 ## git push origin main
 
 para empurrar a atualização para a nuvem
 
 
 
-# git log
+## git log
 
 para apresentar as mudanças - autor, data, mensagem
 
 
 
-# git log --decorate
+## git log --decorate
 
 para apresentar ainda mais informações
 
 
 
-# git log --author ="Nome de alguém"
+## git log --author ="Nome de alguém"
 
 para filtrar as mudanças realizadas pelo autor indicado no código
 
 
 
-# git short log
+## git short log
 
 mostra resumidamente a contribuição de cada autor
 
 
 
-# git shortlog -sn
+## git shortlog -sn
 
 mostra a quantidade de comits de cada author
 
 
 
-# git log --graph
+## git log --graph
 
 mostra de forma gráfica o que está acontecendo internamente
 
 
 
-# git show
+## git show
 
 declara qual foi a alteração feita depois de comitar
 
 
 
-# git diff
+## git diff
 
 declara qual foi a alteração feita antes de comitar
 
 
 
-# git diff --name-only
+## git diff --name-only
 
 declara qual o nome arquivo foi modificado
+
+
+
+# Atenção: muito cuidado ao usar 'git reset'!!
+
+https://medium.com/@andgomes/os-tr%C3%AAs-tipos-de-reset-aa220658d9b2
+
+## git reset 
+
+retira as mudanças adicionadas aguardando pra comitar (mata o comit)
+
+
+
+## git reset --soft
+
+muda o apontamento do head, ou seja, retorna para uma versão comitada anteriormente.
+
+Se utilizado o código **$ git reset soft HEAD~** o ponteiro volta para o head anterior e não se perde o que está na área de stage nem no diretório de working
+
+Também pode se acrescentar o número do hash que indica qual a versão comitada em que desejamos retornar (utilizando o código **$ git reset --soft ab319bc**)
+
+
+
+## git reset --mixed 
+
+é o tipo default, ou seja pode ser utilizado apenas o comando reset
+
+esse comando sincroniza a área de stage com o head que está sendo indicado. Ou seja, retorna a versão do head e perde-se o que estiver no stage - que atualizará junto com o head.
+
+Mas o conteúdo do diretório working não será modificado
+
+para retornar à versão anterior à atual **$ git reset HEAD~ **ou**$ git reset --mixed HEAD~**
+
+ou para indicar a hash **$ git reset --soft ab319bc**
+
+## git reset --hard 
+
+altera o head, a área de stage e o diretório de working para a versão do novo head apontado
+
+
+
