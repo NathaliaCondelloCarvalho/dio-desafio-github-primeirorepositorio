@@ -1,0 +1,231 @@
+Levando um baile mas eu não vou desistir!!
+
+Links úteis:
+
+https://www.youtube.com/watch?v=U-Y_Mtdyo74
+
+https://comandosgit.github.io/
+
+
+
+# Três áreas lógicas do Git
+
+- Head: aponta para o último grupo de alterações (snapshot) comitado
+- Index ou área de stage: aponta para o próximo grupo de alterações a ser comitado - é a informação que já passou pelo comando add .
+- Diretório de Working: são as informações que ainda não foram adicionadas a área de stage
+
+## Sequência de passos:
+
+DIRETÓRIO DE WORKING >> comando git add. >> INDEX >> commit -m "mensagem" >> Head
+
+
+
+# Comandos gerais
+
+## clear
+
+para limpar a tela do terminal
+
+## git clone
+
+para 'importar' o repositório do git hub
+
+*precisa completar com o endereço html que o git hub fornece
+
+## cd 
+
+para abrir o diretório
+
+*precisa completar com o nome do diretório
+
+## cd ..
+
+para subir 1 nível no diretório (ou seja, sair da pasta em que se está para a pasta anterior)
+
+## rm -r nomeDoArquivo
+
+para excluir uma pasta/diretorio
+
+## git status
+
+para receber feedback do gitbash se todas as alterações feitas dentro do diretório estão atualizadas no controle de versão interno do computador
+
+## git log
+
+para apresentar as mudanças - autor, data, mensagem
+
+## git log --decorate
+
+para apresentar ainda mais informações
+
+## git log --author ="Nome de alguém"
+
+para filtrar as mudanças realizadas pelo autor indicado no código
+
+## git short log
+
+mostra resumidamente a contribuição de cada autor
+
+## git shortlog -sn
+
+mostra a quantidade de comits de cada author
+
+## git log --graph
+
+mostra de forma gráfica o que está acontecendo internamente
+
+## git show
+
+declara qual foi a alteração feita depois de comitar
+
+## git diff
+
+declara qual foi a alteração feita antes de comitar
+
+## git diff --name-only
+
+declara qual o nome arquivo foi modificado
+
+## git config --local user.name "Ana"
+
+a partir do qual todos os commits que forem feitos neste repositório irão pertencer a ela.
+
+## git revert
+
+Isso fará com que o commit informado seja desfeito, criando outro. Ao ser rodado, portanto, ele irá gerar um commit cuja mensagem pode ser alterada, usaremos ":x" para salvarmos e sairmos da tela. Ao fazermos `git log` mais uma vez, teremos dois commits, um com a alteração do nome do curso, e outro com a reversão deste.
+
+### Revertendo alterações
+
+Com o `git checkout` nós desfazemos uma alteração que ainda não foi adicionada ao `index` ou `stage`, ou seja, antes do `git add`. Depois de adicionar com `git add`, para desfazer uma alteração, precisamos tirá-la deste estado, com `git reset`. Agora, se já realizamos o `commit`, o comando `git revert` pode nos salvar.
+
+## git tag -a
+
+git tag -a`, seguido do nome que damos a ela, v0.1.0, que poderia ser qualquer outro. Além disto, poderemos incluir uma mensagem. O comando completo ficaria, então: git tag -a v0.1.0 -m "Lançando a primeira versão (BETA) da aplicação de cursos"
+
+ capaz de marcar um ponto na aplicação que não pode ser modificado, fixo. Assim, após ser lançada, a versão `0.1` nunca deixará de ser a versão `0.1`, e quaisquer alterações que forem feitas nela, serão incluídas na versão posterior.
+
+## git remote
+
+
+
+
+
+
+
+# Para inserir novo diretório:
+
+## git init
+
+para inicializar inserção no git
+
+## git add .
+
+para que o controle de versão interno do computador atualize
+
+## git commit -m "mensagem"
+
+para 'comitar' a versão - ou seja, para preparar a atualização a versão do computador interno com a versão registrada em nuvem do github
+
+* precisa incluir texto explicativo entre aspas para ficar registrada a explicação da alteração feita. Por exemplo: "Inclusão de pasta da trilha de Empreendedorismo e Soft Skills, com o resumo da formação de Business Agility"
+
+## $ git remote add origin URL
+
+para empurrar pasta para um repositorio remoto
+
+## $ git branch -M main
+
+para empurrar pasta para um repositorio remoto
+
+
+
+## git commit -am "mensagem"
+
+para 'comitar' todos os arquivos modificados e acrescentar uma mensagem
+
+## git push origin main
+
+para empurrar a atualização para a nuvem
+
+------
+
+
+
+# Para resetar versão do comit
+
+## Atenção: muito cuidado ao usar 'git reset'!!
+
+https://medium.com/@andgomes/os-tr%C3%AAs-tipos-de-reset-aa220658d9b2
+
+## git reset 
+
+retira as mudanças adicionadas aguardando pra comitar (mata o comit)
+
+
+
+## git reset --soft
+
+muda o apontamento do head, ou seja, retorna para uma versão comitada anteriormente.
+
+Se utilizado o código **$ git reset soft HEAD~** o ponteiro volta para o head anterior e não se perde o que está na área de stage nem no diretório de working
+
+Também pode se acrescentar o número do hash que indica qual a versão comitada em que desejamos retornar (utilizando o código **$ git reset --soft ab319bc**)
+
+
+
+## git reset --mixed 
+
+é o tipo default, ou seja pode ser utilizado apenas o comando reset
+
+esse comando sincroniza a área de stage com o head que está sendo indicado. Ou seja, retorna a versão do head e perde-se o que estiver no stage - que atualizará junto com o head.
+
+Mas o conteúdo do diretório working não será modificado
+
+para retornar à versão anterior à atual **$ git reset HEAD~ **ou**$ git reset --mixed HEAD~**
+
+ou para indicar a hash **$ git reset --soft ab319bc**
+
+## git reset --hard 
+
+altera o head, a área de stage e o diretório de working para a versão do novo head apontado
+
+
+
+# Para ramos(branches) diferentes 
+
+(ver txt separado com passo-a-passo)
+
+muito útil para desenvolvimento paralelo de diferentes programadores.
+
+Para ajudar a entender a lógica de funcionamento dos comandos: https://git-school.github.io/visualizing-git/
+
+## git branch titulo
+
+para criar um novo ramo(branch) chamado titulo
+
+## git checkout titulo
+
+para alternar do branch master para este branch titulo
+
+## git checkout -b titulo
+
+para fazer os passos anteriores (git branch e git checkout) ao mesmo tempo
+
+## git merge titulo
+
+cria um commit com o branch atual e com o conteúdo da  branch titulo, unificando as 2 linhas
+
+## git log --graph
+
+para exibirem as linhas específicas representando o desenvolvimento de cada branch do projeto
+
+## git rebase titulo
+
+para que o Git pegue os commits na branch `titulo`, atualizando `master`, que possui todos os commits contidos em `titulo`, além do commit que havia nela mesma. Deste modo, geramos uma única linha, sem confusões.
+
+
+
+#  Salvando temporariamente
+
+## git stash
+
+conseguimos salvar todas as alterações
